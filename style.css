@@ -223,6 +223,33 @@ h1 {
 
 .article-header h1 { max-width: 720px; }
 
+.profile-header {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 32px;
+  align-items: end;
+}
+
+.profile-photo {
+  display: block;
+  width: 180px;
+  height: 180px;
+  border: 1px solid var(--rule);
+  object-fit: cover;
+  filter: saturate(.82) contrast(1.04);
+}
+
+.profile-header h1 {
+  margin: 12px 0 8px;
+}
+
+.profile-role {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
 .article-topline {
   display: flex;
   align-items: center;
@@ -457,6 +484,23 @@ footer a {
   nav a:first-child { display: none; }
   .intro,
   .article-header { margin: 45px 0; }
+  .profile-header {
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 18px;
+    align-items: center;
+  }
+  .profile-photo {
+    width: 96px;
+    height: 96px;
+  }
+  .profile-header h1 {
+    margin: 7px 0 5px;
+    font-size: 27px;
+  }
+  .profile-role {
+    font-size: 13px;
+    line-height: 1.45;
+  }
   h1 { font-size: 32px; overflow-wrap: anywhere; }
   .post-row { grid-template-columns: 1fr; gap: 5px; }
   .post-row h2 { overflow-wrap: anywhere; }
