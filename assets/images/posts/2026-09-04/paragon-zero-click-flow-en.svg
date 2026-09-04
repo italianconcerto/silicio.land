@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 650" role="img" aria-labelledby="title description">
+  <title id="title">Graphite zero-click flow through WhatsApp on Android</title>
+  <desc id="description">Five steps: the victim is added to a WhatsApp group, the attacker sends a PDF, the device parses it automatically, Graphite is loaded into WhatsApp, then escapes the Android sandbox and reaches other applications.</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .bg { fill: #0b0d12; }
+    .rule { stroke: #29313b; stroke-width: 2; }
+    .cyan { fill: #37e6d0; }
+    .pink { fill: #ff4f9a; }
+    .white { fill: #f2f4f6; }
+    .muted { fill: #77808c; }
+    .heading { font-size: 25px; font-weight: 700; letter-spacing: .035em; }
+    .subheading { font-size: 13px; letter-spacing: .075em; }
+    .step { font-size: 18px; }
+    .number { font-size: 17px; font-weight: 700; }
+    .phone-label { font-size: 15px; font-weight: 700; letter-spacing: .05em; }
+    .small { font-size: 12px; letter-spacing: .045em; }
+  </style>
+  <rect class="bg" width="1040" height="650"/>
+  <text x="52" y="48" class="heading white">PARAGON / GRAPHITE</text>
+  <text x="52" y="76" class="subheading muted">WHATSAPP ZERO-CLICK ON ANDROID</text>
+  <line x1="52" y1="102" x2="988" y2="102" class="rule"/>
+
+  <rect x="64" y="148" width="190" height="354" rx="24" fill="none" stroke="#77808c" stroke-width="3"/>
+  <line x1="126" y1="168" x2="192" y2="168" stroke="#77808c" stroke-width="3" stroke-linecap="round"/>
+  <text x="159" y="250" text-anchor="middle" class="phone-label cyan">WHATSAPP</text>
+  <rect x="110" y="286" width="98" height="116" rx="5" fill="none" stroke="#ff4f9a" stroke-width="3"/>
+  <path d="M181 286v24h27" fill="none" stroke="#ff4f9a" stroke-width="3"/>
+  <text x="159" y="353" text-anchor="middle" class="phone-label pink">PDF</text>
+  <text x="159" y="471" text-anchor="middle" class="small muted">NO TAP</text>
+
+  <line x1="318" y1="155" x2="318" y2="535" class="rule"/>
+  <circle cx="318" cy="172" r="21" class="cyan"/><text x="318" y="178" text-anchor="middle" class="number bg">1</text>
+  <text x="365" y="178" class="step white">Victim is added to a WhatsApp group</text>
+
+  <circle cx="318" cy="262" r="21" class="cyan"/><text x="318" y="268" text-anchor="middle" class="number bg">2</text>
+  <text x="365" y="268" class="step white">Attacker sends a PDF to the group</text>
+
+  <circle cx="318" cy="352" r="21" class="cyan"/><text x="318" y="358" text-anchor="middle" class="number bg">3</text>
+  <text x="365" y="345" class="step white">Device automatically parses the PDF</text>
+  <text x="365" y="371" class="small muted">EXPLOIT REQUIRES NO INTERACTION</text>
+
+  <circle cx="318" cy="442" r="21" class="pink"/><text x="318" y="448" text-anchor="middle" class="number bg">4</text>
+  <text x="365" y="448" class="step white">Graphite is loaded into WhatsApp</text>
+
+  <circle cx="318" cy="532" r="21" class="pink"/><text x="318" y="538" text-anchor="middle" class="number bg">5</text>
+  <text x="365" y="525" class="step white">Spyware escapes the Android sandbox</text>
+  <text x="365" y="551" class="step white">and reaches other applications</text>
+
+  <line x1="52" y1="594" x2="988" y2="594" class="rule"/>
+  <text x="52" y="624" class="small muted">RECONSTRUCTION BASED ON THE FLOW DOCUMENTED BY CITIZEN LAB · 19 MARCH 2025</text>
+</svg>
