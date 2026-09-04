@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Recursive";
+  src: url("assets/fonts/fontsource/recursive-400.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Recursive";
+  src: url("assets/fonts/fontsource/recursive-600.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 :root {
   --background: #0b0d12;
   --text: #d5d9df;
@@ -24,7 +40,9 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text);
-  font: 16px/1.6 Arial, Helvetica, sans-serif;
+  font-family: "Recursive", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
 
@@ -44,7 +62,7 @@ a:focus-visible {
 }
 
 .mono {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: "Recursive", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 header {
@@ -97,6 +115,7 @@ h1 {
   margin: 13px 0 15px;
   color: #f2f4f6;
   font-size: clamp(34px, 6vw, 48px);
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -.03em;
 }
@@ -293,7 +312,7 @@ h1 {
 .article-figure figcaption {
   margin-top: 10px;
   color: var(--muted);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-family: "Recursive", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 12px;
   line-height: 1.55;
 }
