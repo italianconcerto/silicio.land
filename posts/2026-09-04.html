@@ -4,10 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="L'AI ha cambiato la scoperta delle vulnerabilità e abbassato la barriera d'ingresso agli attacchi informatici.">
+  <meta property="og:title" content="Potresti essere il prossimo ad essere hackerato">
+  <meta property="og:description" content="L'AI ha cambiato la scoperta delle vulnerabilità e abbassato la barriera d'ingresso agli attacchi informatici.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://silicio.land/posts/2026-09-04.html">
   <meta name="theme-color" content="#0b0d12">
   <link rel="alternate" type="application/rss+xml" title="silicio.land" href="../feed.xml">
   <link rel="stylesheet" href="../style.css">
-  <title>silicio.land</title>
+  <title>Potresti essere il prossimo ad essere hackerato — silicio.land</title>
 </head>
 <body>
   <div class="page">
@@ -29,6 +33,10 @@
             <button type="button" data-lang="en" aria-pressed="false">EN</button>
           </div>
         </div>
+        <h1>
+          <span data-title-language="it">Potresti essere il prossimo ad essere hackerato</span>
+          <span data-title-language="en" lang="en" hidden>You could be the next to be hacked</span>
+        </h1>
         <div class="article-meta mono">
           <time datetime="2026-09-04">04.09.2026</time>
           <span>7 min</span>
@@ -96,7 +104,14 @@
     (() => {
       const buttons = document.querySelectorAll('[data-lang]');
       const articles = document.querySelectorAll('[data-language]');
+      const titles = document.querySelectorAll('[data-title-language]');
       const description = document.querySelector('meta[name="description"]');
+      const socialTitle = document.querySelector('meta[property="og:title"]');
+      const socialDescription = document.querySelector('meta[property="og:description"]');
+      const pageTitles = {
+        it: 'Potresti essere il prossimo ad essere hackerato',
+        en: 'You could be the next to be hacked'
+      };
       const descriptions = {
         it: "L'AI ha cambiato la scoperta delle vulnerabilità e abbassato la barriera d'ingresso agli attacchi informatici.",
         en: "AI has changed vulnerability discovery and lowered the barrier to cyberattacks."
@@ -106,9 +121,12 @@
         const selected = language === 'en' ? 'en' : 'it';
         document.documentElement.lang = selected;
         articles.forEach((article) => { article.hidden = article.dataset.language !== selected; });
+        titles.forEach((title) => { title.hidden = title.dataset.titleLanguage !== selected; });
         buttons.forEach((button) => { button.setAttribute('aria-pressed', String(button.dataset.lang === selected)); });
         description.content = descriptions[selected];
-        document.title = 'silicio.land';
+        socialTitle.content = pageTitles[selected];
+        socialDescription.content = descriptions[selected];
+        document.title = `${pageTitles[selected]} — silicio.land`;
 
         if (updateUrl) {
           const url = new URL(window.location.href);
