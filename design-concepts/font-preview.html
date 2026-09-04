@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Font preview — silicio.land</title>
+  <style>
+    @font-face { font-family: Plex; src: url('../assets/fonts/fontsource/ibm-plex-sans-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: Plex; src: url('../assets/fonts/fontsource/ibm-plex-sans-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: Departure; src: url('../assets/fonts/departure-mono/DepartureMono-Regular.woff2') format('woff2'); font-display: swap; }
+    @font-face { font-family: Recursive; src: url('../assets/fonts/fontsource/recursive-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+    @font-face { font-family: Recursive; src: url('../assets/fonts/fontsource/recursive-600.woff2') format('woff2'); font-weight: 600; font-display: swap; }
+    @font-face { font-family: Commit; src: url('../assets/fonts/commit-mono/CommitMono-400-Regular.otf') format('opentype'); font-display: swap; }
+    @font-face { font-family: Fira; src: url('../assets/fonts/fontsource/fira-mono-400.woff2') format('woff2'); font-display: swap; }
+    @font-face { font-family: Stint; src: url('../assets/fonts/fontsource/stint-ultra-expanded-400.woff2') format('woff2'); font-display: swap; }
+
+    :root { color-scheme: dark; --bg: #080a0e; --panel: #0b0d12; --text: #d5d9df; --muted: #77808c; --rule: #29313b; --cyan: #37e6d0; --pink: #ff4f9a; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: Arial, sans-serif; }
+    main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 80px; }
+    .top { display: flex; justify-content: space-between; gap: 20px; margin-bottom: 36px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
+    .top a { color: var(--cyan); }
+    .top span { color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .option { border: 1px solid var(--rule); background: var(--panel); }
+    .label { display: flex; justify-content: space-between; gap: 20px; padding: 12px 16px; border-bottom: 1px solid var(--rule); color: var(--muted); font: 12px/1.4 ui-monospace, monospace; text-transform: uppercase; }
+    .label b { color: var(--pink); font-weight: 400; }
+    .sample { min-height: 430px; padding: 30px; }
+    .sample header { display: flex; justify-content: space-between; padding-bottom: 12px; border-bottom: 1px solid var(--rule); color: var(--muted); font-size: 11px; text-transform: uppercase; }
+    .sample .brand { color: var(--cyan); }
+    .sample .status { margin-top: 46px; color: var(--pink); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; }
+    .sample h1 { max-width: 480px; margin: 12px 0 18px; color: #f2f4f6; font-size: clamp(29px, 3.4vw, 43px); line-height: 1.08; letter-spacing: -.025em; }
+    .sample p { max-width: 540px; margin: 0 0 1.2em; color: #b7bec7; font-size: 16px; line-height: 1.65; }
+    .sample .meta { color: var(--muted); font-size: 11px; text-transform: uppercase; }
+    .plex-departure { font-family: Plex, sans-serif; }
+    .plex-departure header, .plex-departure .status, .plex-departure .meta { font-family: Departure, monospace; }
+    .recursive { font-family: Recursive, sans-serif; }
+    .recursive h1 { font-weight: 600; }
+    .plex-commit { font-family: Plex, sans-serif; }
+    .plex-commit header, .plex-commit .status, .plex-commit .meta { font-family: Commit, monospace; }
+    .stint-fira { font-family: Fira, monospace; }
+    .stint-fira h1 { font-family: Stint, serif; font-size: clamp(30px, 3.2vw, 40px); line-height: 1.2; letter-spacing: 0; }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .sample { min-height: 0; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top"><a href="../index.html">silicio.land</a><span>confronto font · stesso layout, stesso testo</span></div>
+    <div class="grid">
+      <section class="option">
+        <div class="label"><b>01</b><span>IBM Plex Sans + Departure Mono</span></div>
+        <div class="sample plex-departure">
+          <header><span class="brand">[silicio.land]</span><span>archivio · about · rss</span></header>
+          <div class="status">cybersecurity</div>
+          <h1>Potresti essere il prossimo ad essere hackerato</h1>
+          <p>Dall’uscita del primo Mythos, buona parte di internet si è mossa per verificare se le dichiarazioni sulle sue capacità offensive fossero reali.</p>
+          <div class="meta">04.09.2026 · 7 min</div>
+        </div>
+      </section>
+      <section class="option">
+        <div class="label"><b>02</b><span>Recursive</span></div>
+        <div class="sample recursive">
+          <header><span class="brand">[silicio.land]</span><span>archivio · about · rss</span></header>
+          <div class="status">cybersecurity</div>
+          <h1>Potresti essere il prossimo ad essere hackerato</h1>
+          <p>Dall’uscita del primo Mythos, buona parte di internet si è mossa per verificare se le dichiarazioni sulle sue capacità offensive fossero reali.</p>
+          <div class="meta">04.09.2026 · 7 min</div>
+        </div>
+      </section>
+      <section class="option">
+        <div class="label"><b>03</b><span>IBM Plex Sans + Commit Mono</span></div>
+        <div class="sample plex-commit">
+          <header><span class="brand">[silicio.land]</span><span>archivio · about · rss</span></header>
+          <div class="status">cybersecurity</div>
+          <h1>Potresti essere il prossimo ad essere hackerato</h1>
+          <p>Dall’uscita del primo Mythos, buona parte di internet si è mossa per verificare se le dichiarazioni sulle sue capacità offensive fossero reali.</p>
+          <div class="meta">04.09.2026 · 7 min</div>
+        </div>
+      </section>
+      <section class="option">
+        <div class="label"><b>04</b><span>Stint Ultra Expanded + Fira Mono</span></div>
+        <div class="sample stint-fira">
+          <header><span class="brand">[silicio.land]</span><span>archivio · about · rss</span></header>
+          <div class="status">cybersecurity</div>
+          <h1>Potresti essere il prossimo ad essere hackerato</h1>
+          <p>Dall’uscita del primo Mythos, buona parte di internet si è mossa per verificare se le dichiarazioni sulle sue capacità offensive fossero reali.</p>
+          <div class="meta">04.09.2026 · 7 min</div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

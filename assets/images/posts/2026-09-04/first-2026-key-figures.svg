@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 570" role="img" aria-labelledby="title description">
+  <title id="title">FIRST 2026 mid-year vulnerability forecast key figures</title>
+  <desc id="description">The 2026 forecast is 66,000 CVEs. Actual disclosures through April ran 46.3 percent above February projections. GitHub Security Advisories rose 449 percent year over year, VulnCheck CNA-of-Last-Resort activity rose 3,119 percent, and Mozilla CNA disclosures rose 164 percent in the first quarter.</desc>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .background { fill: #0b0d12; }
+    .box { fill: none; stroke: #29313b; stroke-width: 2; }
+    .heading { fill: #f2f4f6; font-size: 21px; font-weight: 700; letter-spacing: .035em; }
+    .number { fill: #37e6d0; font-size: 48px; font-weight: 700; letter-spacing: -.035em; }
+    .pink { fill: #ff4f9a; }
+    .label { fill: #aab1ba; font-size: 14px; }
+    .note { fill: #77808c; font-size: 12px; }
+  </style>
+  <rect class="background" width="100%" height="100%"/>
+  <text x="52" y="48" class="heading">2026 VULNERABILITY SURGE</text>
+  <rect x="52" y="82" width="442" height="178" class="box"/>
+  <text x="78" y="154" class="number">66,000</text>
+  <text x="78" y="190" class="label">FULL-YEAR CVE FORECAST</text>
+  <text x="78" y="225" class="note">UP FROM 59,427 IN FEBRUARY</text>
+  <rect x="514" y="82" width="474" height="178" class="box"/>
+  <text x="540" y="154" class="number pink">+46.3%</text>
+  <text x="540" y="190" class="label">ACTUAL DISCLOSURES VS FEB. PROJECTION</text>
+  <text x="540" y="225" class="note">CUMULATIVE DRIFT THROUGH APRIL 2026</text>
+  <rect x="52" y="280" width="296" height="218" class="box"/>
+  <text x="78" y="359" class="number">+449%</text>
+  <text x="78" y="397" class="label">GITHUB SECURITY</text>
+  <text x="78" y="419" class="label">ADVISORIES</text>
+  <text x="78" y="463" class="note">YEAR OVER YEAR</text>
+  <rect x="368" y="280" width="304" height="218" class="box"/>
+  <text x="394" y="359" class="number">+3,119%</text>
+  <text x="394" y="397" class="label">VULNCHECK CNA</text>
+  <text x="394" y="419" class="label">OF LAST RESORT</text>
+  <text x="394" y="463" class="note">ACTIVITY INCREASE</text>
+  <rect x="692" y="280" width="296" height="218" class="box"/>
+  <text x="718" y="359" class="number">+164%</text>
+  <text x="718" y="397" class="label">MOZILLA CNA</text>
+  <text x="718" y="419" class="label">DISCLOSURES</text>
+  <text x="718" y="463" class="note">Q1 2026</text>
+  <text x="52" y="544" class="note">SOURCE: FIRST · MID-YEAR VULNERABILITY FORECAST · 15 JUNE 2026</text>
+</svg>

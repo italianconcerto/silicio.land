@@ -1,2 +1,5 @@
 .DS_Store
-design-concepts/
+design-concepts/*
+!design-concepts/font-preview.html
+.tmp-fonts/
+cmux-assets/

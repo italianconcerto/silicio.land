@@ -278,6 +278,28 @@ h1 {
   font-size: .9em;
 }
 
+.article-figure {
+  width: min(900px, calc(100vw - 36px));
+  margin: 2.4em 0 2.7em;
+}
+
+.article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+
+.article-figure figcaption {
+  margin-top: 10px;
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.article-figure figcaption a { color: #aab1ba; }
+
 .back-link {
   display: inline-block;
   margin-top: 30px;

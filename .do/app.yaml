@@ -7,7 +7,7 @@ static_sites:
       branch: main
       repo_clone_url: https://github.com/italianconcerto/silicio.land.git
     source_dir: /
-    build_command: mkdir -p dist/posts && cp index.html about.html style.css site.js feed.xml dist/ && cp posts/*.html dist/posts/
+    build_command: mkdir -p dist/posts dist/assets dist/design-concepts && cp index.html about.html style.css site.js feed.xml dist/ && cp posts/*.html dist/posts/ && cp -R assets/data assets/fonts assets/images dist/assets/ && cp design-concepts/font-preview.html dist/design-concepts/
     output_dir: dist
     catchall_document: index.html
 
