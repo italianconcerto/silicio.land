@@ -188,6 +188,39 @@ h1 {
 
 .article-header h1 { max-width: 720px; }
 
+.article-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.language-switch {
+  display: flex;
+  gap: 4px;
+}
+
+.language-switch button {
+  min-width: 34px;
+  padding: 4px 7px;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.language-switch button:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.language-switch button[aria-pressed="true"] {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
 .article-meta {
   display: flex;
   gap: 14px;
@@ -214,6 +247,22 @@ h1 {
 .prose a {
   color: var(--cyan);
   text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.prose .source-label {
+  margin-top: -1em;
+  color: var(--pink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.prose .sources p {
+  padding-bottom: 1.1em;
+  border-bottom: 1px solid var(--rule);
+  font-size: 15px;
 }
 
 .prose code {

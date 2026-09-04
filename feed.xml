@@ -5,8 +5,15 @@
     <link>https://silicio.land/</link>
     <description>Note su AI, software, cybersecurity, tecnologia ed economia.</description>
     <language>it</language>
-    <lastBuildDate>Fri, 04 Sep 2026 00:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 04 Sep 2026 13:00:00 +0200</lastBuildDate>
     <atom:link href="https://silicio.land/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Chiunque può hackerare chiunque</title>
+      <link>https://silicio.land/posts/chiunque-puo-hackerare-chiunque.html</link>
+      <guid isPermaLink="true">https://silicio.land/posts/chiunque-puo-hackerare-chiunque.html</guid>
+      <pubDate>Fri, 04 Sep 2026 13:00:00 +0200</pubDate>
+      <description>È partita la corsa al bug hunting assistito dall'AI, e i dati raccontano il resto.</description>
+    </item>
     <item>
       <title>Perché silicio.land</title>
       <link>https://silicio.land/posts/perche-silicio-land.html</link>
