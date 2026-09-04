@@ -382,24 +382,6 @@ h1 {
 
 .article-figure figcaption a { color: #aab1ba; }
 
-.comments-section {
-  max-width: 680px;
-  margin-top: 64px;
-  padding-top: 34px;
-  border-top: 1px solid var(--rule);
-}
-
-.comments-section h2 {
-  margin: 0 0 22px;
-  color: #f2f4f6;
-  font-size: 24px;
-}
-
-.giscus,
-.giscus-frame {
-  width: 100%;
-}
-
 .back-link {
   display: inline-block;
   margin-top: 30px;

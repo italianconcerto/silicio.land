@@ -8,7 +8,6 @@
   const socialTitle = document.querySelector('meta[property="og:title"]');
   const socialDescription = document.querySelector('meta[property="og:description"]');
   const terms = document.querySelectorAll('.term[data-definition]');
-  const giscusSection = document.querySelector('[data-giscus]');
   let currentLanguage = 'it';
   let activeTerm = null;
   let activeTermNote = null;
@@ -62,36 +61,6 @@
     activeTermNote = note;
   }
 
-  function syncGiscusLanguage() {
-    const frame = document.querySelector('iframe.giscus-frame');
-    if (!frame) return;
-    frame.contentWindow.postMessage({
-      giscus: { setConfig: { lang: currentLanguage } },
-    }, 'https://giscus.app');
-  }
-
-  function loadGiscus() {
-    if (!giscusSection) return;
-    const script = document.createElement('script');
-    script.src = 'https://giscus.app/client.js';
-    script.async = true;
-    script.crossOrigin = 'anonymous';
-    script.dataset.repo = giscusSection.dataset.repo;
-    script.dataset.repoId = giscusSection.dataset.repoId;
-    script.dataset.category = giscusSection.dataset.category;
-    script.dataset.categoryId = giscusSection.dataset.categoryId;
-    script.dataset.mapping = 'number';
-    script.dataset.term = giscusSection.dataset.discussionNumber;
-    script.dataset.strict = '1';
-    script.dataset.reactionsEnabled = '1';
-    script.dataset.emitMetadata = '0';
-    script.dataset.inputPosition = 'top';
-    script.dataset.theme = 'transparent_dark';
-    script.dataset.lang = currentLanguage;
-    script.dataset.loading = 'lazy';
-    giscusSection.append(script);
-  }
-
   function setLanguage(language, updateUrl) {
     const selected = language === 'en' ? 'en' : 'it';
     const key = selected === 'en' ? 'en' : 'it';
@@ -114,8 +83,6 @@
     if (pageDescription && description) description.content = pageDescription;
     if (pageTitle && socialTitle) socialTitle.content = pageTitle.replace(' — silicio.land', '');
     if (pageDescription && socialDescription) socialDescription.content = pageDescription;
-    syncGiscusLanguage();
-
     rememberLanguage(selected);
 
     if (updateUrl) {
@@ -141,5 +108,4 @@
 
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
   setLanguage(requestedLanguage || storedLanguage(), false);
-  loadGiscus();
 })();
