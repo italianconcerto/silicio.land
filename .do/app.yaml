@@ -22,7 +22,5 @@ ingress:
 domains:
   - domain: silicio.land
     type: PRIMARY
-    zone: silicio.land
   - domain: www.silicio.land
     type: ALIAS
-    zone: silicio.land
