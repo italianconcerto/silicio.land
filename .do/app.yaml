@@ -1,0 +1,24 @@
+name: silicio-land
+region: fra
+
+static_sites:
+  - name: website
+    git:
+      branch: main
+      repo_clone_url: https://github.com/italianconcerto/silicio.land.git
+    source_dir: /
+    build_command: mkdir -p dist/posts && cp index.html about.html style.css feed.xml dist/ && cp posts/*.html dist/posts/
+    output_dir: dist
+    catchall_document: index.html
+
+ingress:
+  rules:
+    - component:
+        name: website
+      match:
+        path:
+          prefix: /
+
+domains:
+  - domain: silicio.land
+    type: PRIMARY
