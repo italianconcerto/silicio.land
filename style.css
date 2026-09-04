@@ -354,9 +354,13 @@ h1 {
   gap: 10px 22px;
 }
 
-.profile-contact-links a {
+.profile-contact-links a,
+.profile-contact-links span {
   color: var(--cyan);
   font-size: 13px;
+}
+
+.profile-contact-links a {
   text-underline-offset: 3px;
 }
 
