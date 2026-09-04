@@ -172,6 +172,21 @@ h1 {
   font-size: 14px;
 }
 
+.post-row .untitled-link {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.untitled-link a {
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+}
+
+.post-row:hover .untitled-link a {
+  color: var(--cyan);
+  text-decoration-color: var(--cyan);
+}
+
 .kind {
   display: inline-block;
   margin-top: 11px;
@@ -248,15 +263,6 @@ h1 {
   color: var(--cyan);
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
-}
-
-.prose .source-label {
-  margin-top: -1em;
-  color: var(--pink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: 11px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
 }
 
 .prose .sources p {
