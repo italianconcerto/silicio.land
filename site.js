@@ -8,13 +8,11 @@
   const socialTitle = document.querySelector('meta[property="og:title"]');
   const socialDescription = document.querySelector('meta[property="og:description"]');
   const terms = document.querySelectorAll('.term[data-definition]');
-  const commentsSection = document.querySelector('[data-comments]');
-  const commentsList = document.querySelector('[data-comments-list]');
+  const giscusSection = document.querySelector('[data-giscus]');
   let currentLanguage = 'it';
   let activeTerm = null;
   let activeTermNote = null;
   let termNoteId = 0;
-  let discussionComments = null;
 
   function storedLanguage() {
     try {
@@ -64,91 +62,34 @@
     activeTermNote = note;
   }
 
-  function commentsStatus(type) {
-    const copy = {
-      loading: { it: 'Caricamento commenti…', en: 'Loading comments…' },
-      empty: { it: 'Ancora nessun commento.', en: 'No comments yet.' },
-      error: { it: 'Commenti non disponibili. Puoi comunque aprire GitHub Discussions.', en: 'Comments unavailable. You can still open GitHub Discussions.' },
-    };
-    return copy[type][currentLanguage];
+  function syncGiscusLanguage() {
+    const frame = document.querySelector('iframe.giscus-frame');
+    if (!frame) return;
+    frame.contentWindow.postMessage({
+      giscus: { setConfig: { lang: currentLanguage } },
+    }, 'https://giscus.app');
   }
 
-  function renderComments() {
-    if (!commentsList) return;
-    commentsList.replaceChildren();
-
-    if (discussionComments === null || discussionComments === false || discussionComments.length === 0) {
-      const status = document.createElement('p');
-      status.className = 'comments-status';
-      status.textContent = commentsStatus(discussionComments === null ? 'loading' : discussionComments === false ? 'error' : 'empty');
-      commentsList.append(status);
-      return;
-    }
-
-    const dateFormatter = new Intl.DateTimeFormat(currentLanguage === 'en' ? 'en-GB' : 'it-IT', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-    });
-
-    discussionComments.forEach((comment) => {
-      const item = document.createElement('article');
-      item.className = 'comment';
-
-      const meta = document.createElement('div');
-      meta.className = 'comment-meta mono';
-
-      if (comment.user?.avatar_url) {
-        const avatar = document.createElement('img');
-        avatar.className = 'comment-avatar';
-        avatar.src = comment.user.avatar_url;
-        avatar.alt = '';
-        avatar.width = 24;
-        avatar.height = 24;
-        avatar.loading = 'lazy';
-        meta.append(avatar);
-      }
-
-      const author = document.createElement('a');
-      author.className = 'comment-author';
-      author.href = comment.user?.html_url || comment.html_url;
-      author.target = '_blank';
-      author.rel = 'noopener';
-      author.textContent = comment.user?.login || 'ghost';
-      meta.append(author);
-
-      const date = document.createElement('a');
-      date.className = 'comment-date';
-      date.href = comment.html_url;
-      date.target = '_blank';
-      date.rel = 'noopener';
-      date.textContent = dateFormatter.format(new Date(comment.created_at));
-      meta.append(date);
-
-      const body = document.createElement('p');
-      body.className = 'comment-body';
-      body.textContent = comment.body;
-
-      item.append(meta, body);
-      commentsList.append(item);
-    });
-  }
-
-  async function loadComments() {
-    if (!commentsSection) return;
-    const repo = commentsSection.dataset.repo.split('/').map(encodeURIComponent).join('/');
-    const discussionNumber = encodeURIComponent(commentsSection.dataset.discussionNumber);
-
-    try {
-      const response = await fetch(`https://api.github.com/repos/${repo}/discussions/${discussionNumber}/comments?per_page=100`, {
-        headers: { Accept: 'application/vnd.github+json' },
-      });
-      if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
-      discussionComments = await response.json();
-    } catch {
-      discussionComments = false;
-    }
-    renderComments();
+  function loadGiscus() {
+    if (!giscusSection) return;
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    script.dataset.repo = giscusSection.dataset.repo;
+    script.dataset.repoId = giscusSection.dataset.repoId;
+    script.dataset.category = giscusSection.dataset.category;
+    script.dataset.categoryId = giscusSection.dataset.categoryId;
+    script.dataset.mapping = 'number';
+    script.dataset.term = giscusSection.dataset.discussionNumber;
+    script.dataset.strict = '1';
+    script.dataset.reactionsEnabled = '1';
+    script.dataset.emitMetadata = '0';
+    script.dataset.inputPosition = 'top';
+    script.dataset.theme = 'transparent_dark';
+    script.dataset.lang = currentLanguage;
+    script.dataset.loading = 'lazy';
+    giscusSection.append(script);
   }
 
   function setLanguage(language, updateUrl) {
@@ -173,7 +114,7 @@
     if (pageDescription && description) description.content = pageDescription;
     if (pageTitle && socialTitle) socialTitle.content = pageTitle.replace(' — silicio.land', '');
     if (pageDescription && socialDescription) socialDescription.content = pageDescription;
-    renderComments();
+    syncGiscusLanguage();
 
     rememberLanguage(selected);
 
@@ -200,5 +141,5 @@
 
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
   setLanguage(requestedLanguage || storedLanguage(), false);
-  loadComments();
+  loadGiscus();
 })();

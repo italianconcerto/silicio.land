@@ -390,70 +390,14 @@ h1 {
 }
 
 .comments-section h2 {
-  margin: 0 0 8px;
+  margin: 0 0 22px;
   color: #f2f4f6;
   font-size: 24px;
 }
 
-.comments-intro,
-.comments-status {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.comments-list {
-  margin: 28px 0 24px;
-}
-
-.comment {
-  padding: 18px 0;
-  border-top: 1px solid var(--rule);
-}
-
-.comment:last-child { border-bottom: 1px solid var(--rule); }
-
-.comment-meta {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-bottom: 10px;
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.comment-avatar {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-}
-
-.comment-author { color: var(--text); }
-
-.comment-date {
-  margin-left: auto;
-  color: var(--muted);
-}
-
-.comment-body {
-  margin: 0;
-  color: #c4c9d0;
-  font-size: 15px;
-  line-height: 1.65;
-  white-space: pre-wrap;
-}
-
-.comments-action {
-  display: inline-block;
-  padding: 9px 12px;
-  border: 1px solid var(--cyan);
-  color: var(--cyan);
-  font-size: 11px;
-  text-decoration: none;
-}
-
-.comments-action:hover {
-  border-color: var(--pink);
-  color: var(--pink);
+.giscus,
+.giscus-frame {
+  width: 100%;
 }
 
 .back-link {
