@@ -3,7 +3,7 @@
   <channel>
     <title>silicio.land</title>
     <link>https://silicio.land/</link>
-    <description>Note su AI, software, cybersecurity, tecnologia ed economia.</description>
+    <description>Appunti personali per capire l’impatto della tecnologia, by Johnny Silicio.</description>
     <language>it</language>
     <lastBuildDate>Fri, 04 Sep 2026 13:00:00 +0200</lastBuildDate>
     <atom:link href="https://silicio.land/feed.xml" rel="self" type="application/rss+xml"/>
@@ -13,13 +13,6 @@
       <guid isPermaLink="true">https://silicio.land/posts/2026-09-04.html</guid>
       <pubDate>Fri, 04 Sep 2026 13:00:00 +0200</pubDate>
       <description>È partita la corsa al bug hunting assistito dall'AI, e i dati raccontano il resto.</description>
-    </item>
-    <item>
-      <title>Perché silicio.land</title>
-      <link>https://silicio.land/posts/perche-silicio-land.html</link>
-      <guid isPermaLink="true">https://silicio.land/posts/perche-silicio-land.html</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0200</pubDate>
-      <description>Ho comprato questo dominio. Tanto vale usarlo.</description>
     </item>
   </channel>
 </rss>

@@ -13,14 +13,18 @@
   <link rel="stylesheet" href="../style.css">
   <title>Potresti essere il prossimo ad essere hackerato — silicio.land</title>
 </head>
-<body>
+<body data-document-title-it="Potresti essere il prossimo ad essere hackerato — silicio.land" data-document-title-en="You could be the next to be hacked — silicio.land" data-description-it="L'AI ha cambiato la scoperta delle vulnerabilità e abbassato la barriera d'ingresso agli attacchi informatici." data-description-en="AI has changed vulnerability discovery and lowered the barrier to cyberattacks.">
   <div class="page">
     <header>
       <a class="brand mono" href="../index.html">silicio.land</a>
-      <nav class="mono" aria-label="Navigazione principale">
-        <a href="../index.html#archive">archivio</a>
+      <nav class="mono" aria-label="Navigazione principale" data-aria-it="Navigazione principale" data-aria-en="Main navigation">
+        <a href="../index.html#archive" data-it="archivio" data-en="archive">archivio</a>
         <a href="../about.html">about</a>
         <a href="../feed.xml">rss</a>
+        <div class="language-switch" role="group" aria-label="Lingua" data-aria-it="Lingua" data-aria-en="Language">
+          <button type="button" data-lang="it" aria-pressed="true">IT</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </header>
 
@@ -28,10 +32,6 @@
       <div class="article-header">
         <div class="article-topline">
           <span class="status mono">cybersecurity</span>
-          <div class="language-switch mono" role="group" aria-label="Lingua">
-            <button type="button" data-lang="it" aria-pressed="true">IT</button>
-            <button type="button" data-lang="en" aria-pressed="false">EN</button>
-          </div>
         </div>
         <h1>
           <span data-title-language="it">Potresti essere il prossimo ad essere hackerato</span>
@@ -91,7 +91,7 @@
         </div>
       </article>
 
-      <a class="back-link mono" href="../index.html">← torna all’archivio</a>
+      <a class="back-link mono" href="../index.html" data-it="← torna all’archivio" data-en="← back to archive">← torna all’archivio</a>
     </main>
 
     <footer class="mono">
@@ -100,45 +100,6 @@
     </footer>
   </div>
 
-  <script>
-    (() => {
-      const buttons = document.querySelectorAll('[data-lang]');
-      const articles = document.querySelectorAll('[data-language]');
-      const titles = document.querySelectorAll('[data-title-language]');
-      const description = document.querySelector('meta[name="description"]');
-      const socialTitle = document.querySelector('meta[property="og:title"]');
-      const socialDescription = document.querySelector('meta[property="og:description"]');
-      const pageTitles = {
-        it: 'Potresti essere il prossimo ad essere hackerato',
-        en: 'You could be the next to be hacked'
-      };
-      const descriptions = {
-        it: "L'AI ha cambiato la scoperta delle vulnerabilità e abbassato la barriera d'ingresso agli attacchi informatici.",
-        en: "AI has changed vulnerability discovery and lowered the barrier to cyberattacks."
-      };
-
-      function setLanguage(language, updateUrl) {
-        const selected = language === 'en' ? 'en' : 'it';
-        document.documentElement.lang = selected;
-        articles.forEach((article) => { article.hidden = article.dataset.language !== selected; });
-        titles.forEach((title) => { title.hidden = title.dataset.titleLanguage !== selected; });
-        buttons.forEach((button) => { button.setAttribute('aria-pressed', String(button.dataset.lang === selected)); });
-        description.content = descriptions[selected];
-        socialTitle.content = pageTitles[selected];
-        socialDescription.content = descriptions[selected];
-        document.title = `${pageTitles[selected]} — silicio.land`;
-
-        if (updateUrl) {
-          const url = new URL(window.location.href);
-          if (selected === 'en') url.searchParams.set('lang', 'en');
-          else url.searchParams.delete('lang');
-          history.replaceState(null, '', url);
-        }
-      }
-
-      buttons.forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.lang, true)));
-      setLanguage(new URLSearchParams(window.location.search).get('lang'), false);
-    })();
-  </script>
+  <script src="../site.js"></script>
 </body>
 </html>

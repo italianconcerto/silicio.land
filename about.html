@@ -9,30 +9,40 @@
   <link rel="stylesheet" href="style.css">
   <title>About — silicio.land</title>
 </head>
-<body>
+<body data-document-title-it="About — silicio.land" data-document-title-en="About — silicio.land" data-description-it="Informazioni su silicio.land." data-description-en="About silicio.land.">
   <div class="page">
     <header>
       <a class="brand mono" href="index.html">silicio.land</a>
-      <nav class="mono" aria-label="Navigazione principale">
-        <a href="index.html#archive">archivio</a>
+      <nav class="mono" aria-label="Navigazione principale" data-aria-it="Navigazione principale" data-aria-en="Main navigation">
+        <a href="index.html#archive" data-it="archivio" data-en="archive">archivio</a>
         <a href="about.html" aria-current="page">about</a>
         <a href="feed.xml">rss</a>
+        <div class="language-switch" role="group" aria-label="Lingua" data-aria-it="Lingua" data-aria-en="Language">
+          <button type="button" data-lang="it" aria-pressed="true">IT</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
       </nav>
     </header>
 
     <main>
       <div class="article-header">
         <span class="status mono">about</span>
-        <h1>Un blog personale, tutto qui.</h1>
+        <h1 data-it="Un blog personale, tutto qui." data-en="A personal blog. That's all.">Un blog personale, tutto qui.</h1>
       </div>
 
-      <article class="prose">
+      <article class="prose" data-language="it" lang="it">
         <p>silicio.land raccoglie note su AI, software, cybersecurity e tecnologia. Ogni tanto entra anche l’economia: dietro una scelta tecnica ci sono quasi sempre un costo, un incentivo e qualcuno che preferirebbe scaricarli altrove.</p>
         <p>Scrivo quando ho una tesi, un esperimento o un errore da documentare. Niente calendario editoriale. Se un’idea entra in tre bullet e una conclusione prevedibile, probabilmente non merita un post.</p>
         <p>Il sito è HTML e CSS. Poche dipendenze, nessun banner, nessun pop-up.</p>
       </article>
 
-      <a class="back-link mono" href="index.html">← torna all’archivio</a>
+      <article class="prose" data-language="en" lang="en" hidden>
+        <p>silicio.land collects notes on AI, software, cybersecurity, and technology. Economics occasionally makes an appearance too: behind a technical choice there is almost always a cost, an incentive, and someone who would rather pass them on to somebody else.</p>
+        <p>I write when I have a thesis, an experiment, or a mistake worth documenting. No editorial calendar. If an idea fits into three bullet points and a predictable conclusion, it probably does not deserve a post.</p>
+        <p>The site is HTML and CSS. Few dependencies, no banners, no pop-ups.</p>
+      </article>
+
+      <a class="back-link mono" href="index.html" data-it="← torna all’archivio" data-en="← back to archive">← torna all’archivio</a>
     </main>
 
     <footer class="mono">
@@ -40,5 +50,6 @@
       <span><a href="index.html">home</a> · <a href="feed.xml">rss</a></span>
     </footer>
   </div>
+  <script src="site.js"></script>
 </body>
 </html>
