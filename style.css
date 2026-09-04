@@ -362,6 +362,7 @@ h1 {
 .article-figure {
   width: min(900px, calc(100vw - 36px));
   margin: 2.4em 0 2.7em;
+  margin-left: calc((min(780px, calc(100vw - 36px)) - min(900px, calc(100vw - 36px))) / 2);
 }
 
 .article-figure img {
