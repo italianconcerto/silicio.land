@@ -348,7 +348,13 @@ h1 {
   text-transform: uppercase;
 }
 
-.profile-contacts a {
+.profile-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+}
+
+.profile-contact-links a {
   color: var(--cyan);
   font-size: 13px;
   text-underline-offset: 3px;
