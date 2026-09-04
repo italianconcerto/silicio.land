@@ -318,6 +318,20 @@ h1 {
   font-size: 15px;
 }
 
+.article-signature {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 42px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.article-signature a { color: var(--text); }
+
 .prose code {
   color: var(--pink);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
