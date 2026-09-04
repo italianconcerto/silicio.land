@@ -3,16 +3,16 @@
   <channel>
     <title>silicio.land</title>
     <link>https://silicio.land/</link>
-    <description>Appunti personali per capire l’impatto della tecnologia, by Johnny Silicio.</description>
-    <language>it</language>
+    <description>Personal notes to understand technology's impact, by Johnny Silicio.</description>
+    <language>en</language>
     <lastBuildDate>Fri, 04 Sep 2026 13:00:00 +0200</lastBuildDate>
     <atom:link href="https://silicio.land/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
-      <title>Chiunque può hackerare chiunque</title>
+      <title>Anyone Can Hack Anyone</title>
       <link>https://silicio.land/posts/2026-09-04-anyone-can-hack-anyone.html</link>
       <guid isPermaLink="true">https://silicio.land/posts/2026-09-04-anyone-can-hack-anyone.html</guid>
       <pubDate>Fri, 04 Sep 2026 13:00:00 +0200</pubDate>
-      <description>Tutti hanno iniziato ad andare a caccia di bug con l'AI, e i dati sui CVE mostrano quanto è cambiata la capacità di trovarli.</description>
+      <description>Everyone started hunting for bugs with AI, and CVE data shows how much our ability to find them has changed.</description>
     </item>
   </channel>
 </rss>
