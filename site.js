@@ -63,6 +63,16 @@
 
   function setLanguage(language, updateUrl) {
     const selected = language === 'en' ? 'en' : 'it';
+    const languagePage = document.body.dataset[selected === 'en' ? 'urlEn' : 'urlIt'];
+    if (updateUrl && languagePage && new URL(languagePage, location.href).pathname !== location.pathname) {
+      rememberLanguage(selected);
+      const destination = new URL(languagePage, location.href);
+      destination.search = location.search;
+      destination.searchParams.delete('lang');
+      destination.hash = location.hash;
+      location.assign(destination.href);
+      return;
+    }
     const key = selected === 'en' ? 'en' : 'it';
     const ariaKey = selected === 'en' ? 'ariaEn' : 'ariaIt';
     const titleKey = selected === 'en' ? 'documentTitleEn' : 'documentTitleIt';
@@ -75,6 +85,9 @@
     translatedAria.forEach((element) => { element.setAttribute('aria-label', element.dataset[ariaKey]); });
     languageBlocks.forEach((element) => { element.hidden = element.dataset.language !== selected; });
     titleBlocks.forEach((element) => { element.hidden = element.dataset.titleLanguage !== selected; });
+    document.querySelectorAll('[data-href-it][data-href-en]').forEach((element) => {
+      element.href = element.dataset[selected === 'en' ? 'hrefEn' : 'hrefIt'];
+    });
     buttons.forEach((button) => { button.setAttribute('aria-pressed', String(button.dataset.lang === selected)); });
 
     const pageTitle = document.body.dataset[titleKey];
@@ -107,7 +120,16 @@
   });
 
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
-  setLanguage(requestedLanguage || storedLanguage(), false);
+  const requestedPage = document.body.dataset[requestedLanguage === 'en' ? 'urlEn' : 'urlIt'];
+  if (requestedLanguage && requestedPage) {
+    const destination = new URL(requestedPage, location.href);
+    destination.search = location.search;
+    destination.searchParams.delete('lang');
+    destination.hash = location.hash;
+    location.replace(destination.href);
+    return;
+  }
+  setLanguage(requestedLanguage || document.body.dataset.pageLanguage || storedLanguage(), false);
 
   // Count production page loads after the initial language has been applied.
   if (['silicio.land', 'www.silicio.land'].includes(window.location.hostname)) {

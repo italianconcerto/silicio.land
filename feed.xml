@@ -9,7 +9,7 @@
     <atom:link href="https://silicio.land/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Anyone Can Hack Anyone</title>
-      <link>https://silicio.land/posts/2026-09-04-anyone-can-hack-anyone.html</link>
+      <link>https://silicio.land/posts/2026-09-04-anyone-can-hack-anyone.en.html</link>
       <guid isPermaLink="true">https://silicio.land/posts/2026-09-04-anyone-can-hack-anyone.html</guid>
       <pubDate>Fri, 04 Sep 2026 13:00:00 +0200</pubDate>
       <description>Everyone started hunting for bugs with AI, and CVE data shows how much our ability to find them has changed.</description>
