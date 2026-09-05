@@ -428,6 +428,17 @@ h1 {
 
 .article-figure figcaption a { color: #aab1ba; }
 
+.comments {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.comments h2 { font-size: 1.35rem; }
+.comments > p { color: var(--muted); font-size: 0.9rem; }
+.comments iframe { display: block; width: 100%; min-height: 400px; border: 0; }
+
 .back-link {
   display: inline-block;
   margin-top: 30px;

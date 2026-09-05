@@ -131,6 +131,51 @@
   }
   setLanguage(requestedLanguage || document.body.dataset.pageLanguage || storedLanguage(), false);
 
+  const thread = document.getElementById('cusdis_thread');
+  if (thread) {
+    if (currentLanguage === 'it') {
+      window.CUSDIS_LOCALE = {
+        powered_by: 'Commenti gestiti da Cusdis',
+        post_comment: 'Invia commento',
+        loading: 'Caricamento',
+        email: 'Email (facoltativa)',
+        nickname: 'Nome',
+        reply_placeholder: 'Scrivi una risposta…',
+        reply_btn: 'Rispondi',
+        sending: 'Invio…',
+        mod_badge: 'MOD',
+        content_is_required: 'Scrivi un commento',
+        nickname_is_required: 'Inserisci un nome',
+        comment_has_been_sent: 'Commento inviato. Verrà pubblicato dopo l’approvazione.',
+      };
+    }
+    const commentsScript = document.createElement('script');
+    commentsScript.src = 'https://cusdis.com/js/cusdis.es.js';
+    commentsScript.async = true;
+    commentsScript.addEventListener('load', () => {
+      const frame = thread.querySelector('iframe');
+      if (!frame) return;
+      frame.title = currentLanguage === 'it' ? 'Commenti' : 'Comments';
+      const fitComments = () => {
+        const root = frame.contentDocument?.getElementById('root');
+        if (!root) return;
+        const resize = () => {
+          frame.style.height = `${Math.max(400, Math.ceil(root.getBoundingClientRect().height) + 32)}px`;
+        };
+        new ResizeObserver(resize).observe(root);
+        resize();
+      };
+      frame.addEventListener('load', fitComments, { once: true });
+      if (frame.contentDocument?.readyState === 'complete') fitComments();
+    });
+    commentsScript.addEventListener('error', () => {
+      thread.textContent = currentLanguage === 'it'
+        ? 'Commenti non disponibili. Ricarica la pagina per riprovare.'
+        : 'Comments unavailable. Reload the page to try again.';
+    });
+    document.head.append(commentsScript);
+  }
+
   // Count production page loads after the initial language has been applied.
   if (['silicio.land', 'www.silicio.land'].includes(window.location.hostname)) {
     const measurementId = 'G-FGD581DVNF';
