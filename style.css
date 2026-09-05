@@ -428,6 +428,39 @@ h1 {
 
 .article-figure figcaption a { color: #aab1ba; }
 
+.newsletter {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--rule);
+}
+
+.newsletter h2 { font-size: 1.35rem; }
+.newsletter p { color: var(--muted); font-size: 0.9rem; }
+.newsletter label { display: block; margin-bottom: 0.4rem; font-size: 0.9rem; }
+.newsletter-fields { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.newsletter input[type="email"] {
+  flex: 1 1 200px;
+  min-width: 0;
+  padding: 0.75rem;
+  color: var(--text);
+  background: var(--background);
+  border: 1px solid var(--rule);
+  border-radius: 0;
+  font: inherit;
+}
+.newsletter button {
+  padding: 0.75rem 1.1rem;
+  border: 1px solid var(--cyan);
+  background: transparent;
+  color: var(--cyan);
+  font: inherit;
+  cursor: pointer;
+}
+.newsletter button:hover { background: var(--cyan); color: var(--background); }
+.newsletter input:focus-visible,
+.newsletter button:focus-visible { outline: 2px solid var(--pink); outline-offset: 3px; }
+
 .comments {
   max-width: 760px;
   margin: 3rem auto 0;
