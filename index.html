@@ -6,7 +6,7 @@
   <meta name="description" content="Appunti personali per capire l’impatto della tecnologia, by Johnny Silicio.">
   <meta name="theme-color" content="#0b0d12">
   <link rel="alternate" type="application/rss+xml" title="silicio.land" href="feed.xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260906-newsletter">
   <title>silicio.land</title>
 </head>
 <body data-document-title-it="silicio.land" data-document-title-en="silicio.land" data-description-it="Appunti personali per capire l’impatto della tecnologia, by Johnny Silicio." data-description-en="Personal notes to understand the impact of technology, by Johnny Silicio.">
@@ -46,11 +46,13 @@
       <section class="newsletter" aria-labelledby="newsletter-heading">
         <h2 id="newsletter-heading" data-it="Nuovi articoli, via email" data-en="New articles, by email">Nuovi articoli, via email</h2>
         <p data-it="Un’email per ogni nuovo articolo, in inglese. Puoi cancellarti quando vuoi." data-en="An email for each new article, in English. Unsubscribe whenever you like.">Un’email per ogni nuovo articolo, in inglese. Puoi cancellarti quando vuoi.</p>
-        <form action="https://buttondown.com/api/emails/embed-subscribe/silicio" method="post">
+        <form action="https://2fbef8f5.sibforms.com/serve/MUIFABK_BpXi7nZh4xzMoIElCHRvXxB_ZUFnxuqZKq3cSS23a1lyFV50qh1QJoX5UA-UDhQl--ZK8jDpbK_Gljgio9RRk_Hzs9k20bjGsCOAyr1CsuVK8P7zntFgICHpyezul-sV5VbkGUCbxF_l3-fN8-UzuOqBoCUFAXLnEgN_ab-YF382aVb_9hluZCQYLzkQ3Jgik7BFtFjBMw==" method="post">
           <label for="newsletter-email">Email</label>
           <div class="newsletter-fields">
-            <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-            <input type="hidden" name="embed" value="1">
+            <input id="newsletter-email" name="EMAIL" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <input type="text" name="email_address_check" value="" class="newsletter-honeypot" tabindex="-1" aria-hidden="true" autocomplete="off">
+            <input type="hidden" name="locale" value="en">
+            <input type="hidden" name="html_type" value="simple">
             <button type="submit" data-it="Iscriviti" data-en="Subscribe">Iscriviti</button>
           </div>
         </form>
@@ -62,6 +64,6 @@
       <span><a href="about.html">about</a> · <a href="feed.xml">rss</a></span>
     </footer>
   </div>
-  <script src="site.js"></script>
+  <script src="site.js?v=20260906-newsletter"></script>
 </body>
 </html>

@@ -439,6 +439,7 @@ h1 {
 .newsletter p { color: var(--muted); font-size: 0.9rem; }
 .newsletter label { display: block; margin-bottom: 0.4rem; font-size: 0.9rem; }
 .newsletter-fields { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.newsletter-honeypot { display: none; }
 .newsletter input[type="email"] {
   flex: 1 1 200px;
   min-width: 0;

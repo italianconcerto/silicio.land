@@ -10,12 +10,15 @@ social previews. Share its URL instead of `?lang=en`.
 
 ## Newsletter
 
-Buttondown hosts the newsletter at https://buttondown.com/silicio. Subscription
-forms appear on the home page, About page, and article pages. Emails are in English.
-The free plan does not include RSS-to-email automation.
+Brevo hosts the newsletter on its Free plan (300 email sends per day).
+Subscription forms appear on the home page, About page, and article pages.
+The form named "silicio.land newsletter" adds subscribers directly to the
+"silicio.land" list with "No confirmation email" selected (single opt-in).
+Emails are in English. Preserve the form's honeypot field when editing it.
 
 When publishing a new article, deploy and verify its English URL first, then create
-and send a Buttondown email with the article title, a short excerpt, and that URL.
+and send a Brevo campaign to the "silicio.land" list with the article title,
+a short excerpt, and that URL. RSS-to-email automation is not configured.
 Send one announcement per new article, not for edits to existing posts. Do not
 announce old articles when setting up or redeploying the site.
 

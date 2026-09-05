@@ -131,6 +131,44 @@
   }
   setLanguage(requestedLanguage || document.body.dataset.pageLanguage || storedLanguage(), false);
 
+  document.querySelectorAll('.newsletter form').forEach((form) => {
+    const status = document.createElement('p');
+    status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', 'polite');
+    form.append(status);
+    let pending = false;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (pending) return;
+      pending = true;
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = true;
+      form.setAttribute('aria-busy', 'true');
+      status.textContent = currentLanguage === 'it' ? 'Iscrizione in corso…' : 'Subscribing…';
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        const result = await response.json();
+        if (!response.ok || result.success !== true) throw new Error('Subscription failed');
+        status.textContent = currentLanguage === 'it'
+          ? 'Iscrizione completata. Riceverai i prossimi articoli via email.'
+          : 'You are subscribed. New articles will arrive by email.';
+        form.reset();
+      } catch {
+        status.textContent = currentLanguage === 'it'
+          ? 'Non è stato possibile confermare l’iscrizione. Riprova tra poco.'
+          : 'We could not confirm your subscription. Please try again shortly.';
+      } finally {
+        pending = false;
+        button.disabled = false;
+        form.removeAttribute('aria-busy');
+      }
+    });
+  });
+
   const thread = document.getElementById('cusdis_thread');
   if (thread) {
     if (currentLanguage === 'it') {
