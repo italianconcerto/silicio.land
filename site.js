@@ -108,4 +108,21 @@
 
   const requestedLanguage = new URLSearchParams(window.location.search).get('lang');
   setLanguage(requestedLanguage || storedLanguage(), false);
+
+  // Count production page loads after the initial language has been applied.
+  if (['silicio.land', 'www.silicio.land'].includes(window.location.hostname)) {
+    const measurementId = 'G-FGD581DVNF';
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_title: document.body.dataset.documentTitleEn || document.title,
+    });
+    const analyticsScript = document.createElement('script');
+    analyticsScript.async = true;
+    analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    document.head.append(analyticsScript);
+  }
 })();
